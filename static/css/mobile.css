@@ -1,0 +1,56 @@
+@media screen and (max-width: 500px) {
+  .navbar {
+    margin-top: 1vw;
+    height: 18vw;
+    flex-direction: column;
+  }
+
+  .nav-right {
+    margin: 5px 0 0 0;
+  }
+
+  .logo img {
+    border: 1.5px solid grey;
+    height: 9vw;
+    width: 18vw;
+    margin: 0 1.5vw;
+    border-radius: 25px;
+  }
+  .nav-left li a{
+    font-size: 1rem;
+  }
+
+  .dropbtn {
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    font-size: 0.9rem;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 3px 12px;
+    text-decoration: none;
+    display: block;
+    width: 25vw;
+  }
+
+  .form-input {
+    width: 40vw;
+    border: 1px solid;
+    border-radius: 7px;
+    padding: 0px 5px;
+  }
+
+  ul {
+    margin: 0 0 0 5vw;
+    font-size: 0.9rem;
+    font-weight: bolder;
+    align-items: center;
+  }
+
+  .nav-right .btn {
+    height: 4vw;
+    width: 15vw;
+  }
+}

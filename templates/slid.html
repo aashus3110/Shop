@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/1935d064dd.js"></script>
+    <link rel="stylesheet" href="../static/css/slid.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="slide-container">
+        <img src="../static/img/left.png" alt="left" id="slid-left" class="arrow" />
+
+        <section class="container" id="slider">
+            <ul>
+                {% for Product in prod %}
+                <img src="media/{{Product.image}}" class="thumbnail" alt="..." />
+
+                {%endfor%}
+                <li class="thumbnail"></li>
+                <li class="thumbnail"></li>
+                <li class="thumbnail"></li>
+                <li class="thumbnail"></li>
+                <li class="thumbnail"></li>
+                <li class="thumbnail"></li>
+                <li class="thumbnail"></li>
+                <li class="thumbnail"></li>
+            </ul>
+        </section>
+        <img src="../static/img/right.png" alt="right" id="slid-right" class="arrow" />
+
+    </div>
+    <script src="../static/js/slid.js"></script>
+</body>
+
+</html>
