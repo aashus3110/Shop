@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>??????????</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+  <link rel="stylesheet" href="../static/css/login.css">
+  <link rel="stylesheet" href="../static/css/alert.css">
+
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <div class="cotn_principal">
+    <!--alert messages-->
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}" id="msg" role="alert">
+      <strong> Message : </strong> {{ message }}
+      </button>
+    </div>
+    {% endfor %}
+
+    <div class="cont_login">
+      <div class="cont_info_log_sign_up">
+
+        <!-- Login -->
+        <div class="col_md_login">
+          <div class="cont_ba_opcitiy">
+            <h2>LOGIN</h2>
+            <button class="btn_login" onclick="cambiar_login()">LOGIN</button>
+          </div>
+        </div>
+
+        <!-- Sing_Up -->
+        <div class="col_md_sign_up">
+          <div class="cont_ba_opcitiy">
+            <h2>SIGN UP</h2>
+            <button class="btn_sign_up" onclick="cambiar_sign_up()">SIGN UP</button>
+          </div>
+        </div>
+
+      </div>
+      <div class="cont_back_info"> </div>
+      <div class="cont_forms">
+        <form action="/login" method="POST">
+          <div class="cont_form_login">
+            <a href="#" onclick="ocultar_login_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
+            <h2>LOGIN</h2>
+            <input id="loginusername" name="loginusername" type="text" placeholder="username" />
+            <input id="loginpassword" name="loginpassword" type="password" placeholder="Password" />
+            {% csrf_token %}
+            <button class="btn_login" type="submit">LOGIN</button>
+          </div>
+        </form>
+        <form action="/signup" method='post'>
+          {% csrf_token %}
+          <div class="cont_form_sign_up">
+            <a href="#" onclick="ocultar_login_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
+            <h2>SIGN UP</h2>
+            <input type="text" id="fname" name="fname" placeholder="Full Name" />
+            <input type="text" id="username" name="username" placeholder="User" />
+            <input type="email" id="email" name="email" placeholder="Email" />
+            <input type="password" id="pass1" name="pass1" placeholder="Password" />
+            <input type="password" id="pass2" name="pass2" placeholder="Confirm Password" />
+            {% csrf_token %}{% csrf_token %}
+            <button class="btn_sign_up" type="submit">SIGN UP</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+    <!-- partial -->
+    <script src="../static/js/login.js"></script>
+    <script src="../static/js/alert.js"></script>
+    <script src="../static/js/jquery.js"></script>
+    <script>
+      setTimeout(function () {
+        if ($('#msg').length > 0) {
+          $('#msg').remove();
+        }
+      }, 5000)
+    </script>
+
+</body>
+
+</html>

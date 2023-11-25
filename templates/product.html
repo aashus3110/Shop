@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://kit.fontawesome.com/1935d064dd.js"></script>
+    <link rel="stylesheet" href="../static/css/slid.css" />
+    <link rel="stylesheet" href="../static/css/product.css" />
+    <link rel="stylesheet" href="../static/css/utils.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="slide-container shadow">
+      <img
+        src="../static/img/left.png"
+        alt="left"
+        id="slid-left"
+        class="arrow"
+      />
+
+      <section class="container" id="slider">
+        {% for Product in prod %}
+        <ul class="prod">
+          <img
+            src="media/{{Product.image}}"
+            class="thumbnail shadow"
+            alt="..."
+          />
+          <hr />
+          <div class="card shad">
+            <h5 class="rem1 g" id="namepr{{Product.id}}">
+              {{Product.name| truncatechars:20}}
+            </h5>
+            <h5 class="title rem1 r">Price: <span id="pricepr{{Product.id}}">{{Product.price| truncatechars:20}}
+            </span>
+            </h5>
+            <h5 class="title rem1 b">
+              Detail&nbsp;:&nbsp;{{Product.detail| truncatechars:15}}
+            </h5>
+          </div>
+          <div class="button">
+            <span id="divpr{{Product.id}}" class="divpr">
+              <button id="pr{{Product.id}}" class="bt w cart">
+                Add To Cart
+              </button>
+            </span>
+            <a href="/products/{{Product.id}}">
+              <button id="qv{{Product.id}}" class="bt w m2px cart">
+                QuickView
+              </button></a
+            >
+          </div>
+        </ul>
+        {%endfor%}
+      </section>
+      <img
+        src="../static/img/right.png"
+        alt="right"
+        id="slid-right"
+        class="arrow"
+      />
+    </div>
+    <script src="../static/js/slid.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

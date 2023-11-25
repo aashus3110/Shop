@@ -1,0 +1,30 @@
+body{
+    background-color: whitesmoke;
+}
+.sp {
+    display: flex;
+    margin: 3vw auto;
+    width: 50%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.con {
+    display: flex;
+    width: 35%;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+}
+
+.pimg {
+    width: 40%;
+}
+
+.simg {
+    height: 25vw;
+    width: 20vw;
+}
+.m5{
+    margin-top: 5vw;
+}

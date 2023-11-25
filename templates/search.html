@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% block contant %}
+
+<head>
+    <link rel="stylesheet" href="../static/css/search.css">
+</head>
+<div class="container my-3">
+    {% if allprod|length < 1 %} <p>No search results</p>
+
+        <b class="r">Your search query : {{query}} did not match any documents. </b><br />
+        Suggestions:
+        <ul>
+            <li class="g">Try different keywords.</li>
+            <li class="g">Try more general keywords.</li>
+            <li class="g">Try fewer keywords.</li>
+            <li class="g">Make sure that all words are spelled correctly.</li>
+        </ul>
+        {% endif %}
+</div>
+{% for Product in allprod %}
+<div class="sp">
+    <div class="pimg">
+        <img src="media/{{Product.image}}" class="simg shad" alt="..." />
+    </div>
+    <div class="con shad">
+        <h5 class="rem1 g" id="namepr{{Product.id}}">&nbsp;&nbsp;&nbsp;{{Product.name | truncatechars:25}}</h5>
+        <h5 class="rem1">&nbsp;&nbsp;&nbsp;{{Product.category}} : {{Product.Sub_Category}}</h5>
+        <h5 class="title rem1 r">&nbsp;&nbsp;&nbsp;
+            Price: <span id="pricepr{{Product.id}}">{{Product.price}}</span>
+        </h5>
+        <h5 class="title rem1 b">&nbsp;&nbsp;&nbsp;Detail: {{Product.detail | truncatechars:20}}</h5>
+
+        <div class="button m5 shad">
+            <span id="divpr{{Product.id}}" class="divpr"><button id="pr{{Product.id}}" class="bt w cart">
+                    Add To Cart
+                </button></span>
+            <a href="/products/{{Product.id}}"><button id="qv{{Product.id}}" class="bt w m2px cart">
+                    QuickView
+                </button></a>
+        </div>
+    </div>
+</div>
+{% endfor %} {% endblock %}

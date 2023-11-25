@@ -1,0 +1,11 @@
+django-admin startproject (python -m django startproject Shop)
+python manage.py startapp
+python manage.py runserver
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser
+https://source.unsplash.com/1600x600/?Home
+
+black
+1234
+
